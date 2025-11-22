@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    restart: always
+    environment:
+      - N8N_PORT=5678
+      - WEBHOOK_URL=${RENDER_EXTERNAL_URL}
+      - GENERIC_TIMEZONE=Europe/Berlin
+    ports:
+      - "5678:5678"
